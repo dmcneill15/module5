@@ -5,10 +5,11 @@ let myCalc = new Calculator();
 let newLog = new Logger();
 
 const addNumbers = (req, res) => {
+  let myCalc1 = new Calculator();
   let number1 = parseInt(req.query.num1);
   let number2 = parseInt(req.query.num2);
   let sum = myCalc.add(number1, number2);
-  let log = newLog.logMsg(myCalc.id, sum);
+  let log = newLog.logMsg(myCalc1.id, sum);
   res.status(200);
   res.json({ result: sum });
 };
