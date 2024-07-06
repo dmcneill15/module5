@@ -1,6 +1,10 @@
 class Calculator {
   constructor() {
-    this.id = Date.now()
+    this.id = this.generateRandomId();
+  }
+
+  generateRandomId() {
+    return Math.floor(Math.random() * 1000000); // Generates a random number between 0 and 999999
   }
   
   #log = (value) => {
